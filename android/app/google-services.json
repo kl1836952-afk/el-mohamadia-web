@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "703086281023",
+    "project_id": "almuhamadiy",
+    "storage_bucket": "almuhamadiy.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703086281023:android:e731b007d29c5de275538a",
+        "android_client_info": {
+          "package_name": "com.elzoghby.auhamadiyah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDBxUnbh5aqpRq8J33nXHe4BM-4agVkhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

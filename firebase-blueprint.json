@@ -1,0 +1,107 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Information about a user account, either client or admin.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "admin",
+            "client"
+          ]
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "uid",
+        "email",
+        "role",
+        "createdAt"
+      ]
+    },
+    "Request": {
+      "title": "Customs Clearance Request",
+      "description": "A shipment tracking and customs clearance request submitted by a client.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "clientName": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "service": {
+          "type": "string"
+        },
+        "cargoDescription": {
+          "type": "string"
+        },
+        "cargoDetails": {
+          "type": "string"
+        },
+        "creationDate": {
+          "type": "string"
+        },
+        "lastUpdated": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array"
+        },
+        "additionalNotesAr": {
+          "type": "string"
+        },
+        "additionalNotesEn": {
+          "type": "string"
+        },
+        "uploadedFiles": {
+          "type": "array"
+        },
+        "createdAt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "clientId",
+        "clientName",
+        "phone",
+        "service",
+        "cargoDescription",
+        "creationDate",
+        "lastUpdated",
+        "steps",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "A user document indexed by their authentication UID."
+    },
+    "requests/{requestId}": {
+      "schema": "Request",
+      "description": "Clearance requests and shipping files submitted by clients."
+    }
+  }
+}

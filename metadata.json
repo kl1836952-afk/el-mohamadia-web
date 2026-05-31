@@ -1,0 +1,6 @@
+{
+  "name": "Al-Muhammadiyah Customs",
+  "description": "تطبيق متكامل لخدمات التخليص الجمركي بميناء الإسكندرية والموانئ المصرية، يحتوي على حاسبة الرسوم الجمركية للسيارات ومساعد جمركي ذكي مدعوم بالذكاء الاصطناعي وبوابة لتلقي الاستفسارات وتتبع حالة المعاملات.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

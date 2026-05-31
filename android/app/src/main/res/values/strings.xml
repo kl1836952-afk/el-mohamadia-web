@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">almuhamadiyah</string>
+    <string name="title_activity_main">almuhamadiyah</string>
+    <string name="package_name">com.elzoghby.auhamadiyah</string>
+    <string name="custom_url_scheme">com.elzoghby.auhamadiyah</string>
+</resources>

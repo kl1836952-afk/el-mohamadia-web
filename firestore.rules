@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null && (
+        request.auth.token.email == 'kl1836952@gmail.com' ||
+        request.auth.token.email == 'eslamrezk80@gmail.com' ||
+        request.auth.token.email.matches('(?i)^eslamrezk80.*')
+      );
+    }
+
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Profiles
+    match /users/{userId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == userId || 
+        isAdmin()
+      );
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Customs Requests
+    match /requests/{requestId} {
+      allow read, list: if request.auth != null && (
+        resource.data.clientId == request.auth.uid || 
+        isAdmin()
+      );
+      
+      allow create: if request.auth != null && 
+                    request.resource.data.clientId == request.auth.uid;
+                    
+      allow update: if request.auth != null && (
+        isAdmin() || (
+          resource.data.clientId == request.auth.uid && 
+          request.resource.data.clientId == request.auth.uid && 
+          request.resource.data.steps == resource.data.steps
+        )
+      );
+      
+      allow delete: if request.auth != null && isAdmin();
+    }
+  }
+}
