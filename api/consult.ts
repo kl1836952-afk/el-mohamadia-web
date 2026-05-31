@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { GoogleGenAI } from "@google/genai";
 
-const SYSTEM_INSTRUCTION = `
+const SYSTEM_INSTRUCTION = ` 
 أنت المستشار الجمركي الذكي لـ "شركة المحمدية للتخليص الجمركي" (Al-Muhammadiyah Customs).
 الشركة رائدة في مجال الاستخلاص والتخليص الجمركي لسيارات الأفراد والشركات والرسائل التجارية والواردات بميناء الإسكندرية البحري وكافة موانئ جمهورية مصر العربية.
 مدير الشركة وصاحبها ورئيس مجلس الإدارة هو: أستاذ إسلام محمد (رقم الهاتف والواتساب: 01274833844، الإيميل: info@almuhammadiyah.com).
