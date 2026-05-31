@@ -14,7 +14,7 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
   const [isMuted, setIsMuted] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [dragActive, setDragActive] = useState(false);
-  
+
   const videoRef = useRef<HTMLVideoElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -33,7 +33,7 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
       setVideoSrc(videoUrl);
       setIsPlaying(true);
       setIsMuted(false);
-      
+
       // Attempt to save to sessionStorage (only works if url is valid, but objectUrls are session-bound)
       try {
         sessionStorage.setItem("al_muhammadiyah_promo_video", videoUrl);
@@ -89,16 +89,16 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
 
   return (
     <div className="w-full relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-800/35 bg-emerald-950 mb-10">
-      
+
       {/* Absolute Glow Background Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900/40 via-emerald-950 to-neutral-950 pointer-events-none" />
 
       {/* Main Container Layout */}
       <div className="relative min-h-[460px] flex flex-col xl:flex-row items-stretch justify-between">
-        
+
         {/* Left Side: Information & Branding (Dark Video Theme Mood) */}
         <div className="flex-1 p-8 md:p-12 flex flex-col justify-between z-10 space-y-8 xl:max-w-2xl text-white">
-          
+
           <div className="space-y-4">
             <span className="inline-flex items-center gap-1.5 bg-gradient-to-l from-amber-500/25 to-emerald-500/25 border border-amber-400/40 text-amber-300 py-1.5 px-4 rounded-full text-xs font-bold font-sans tracking-wide">
               <Sparkles className="h-3.5 w-3.5 text-amber-400 animate-spin" />
@@ -110,7 +110,7 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
             </h1>
 
             <p className="text-emerald-250 text-sm md:text-base leading-relaxed font-sans font-light">
-              {isAr 
+              {isAr
                 ? "دقة، سرعة، وأمان مالي متكامل بميناء الإسكندرية. من بيتك، شاهد وتابع الإجراءات الجمركية لسيارتك خطوة بخطوة بالذكاء الاصطناعي مع طاقم أستاذ إسلام محمد."
                 : "Alexandria port absolute leader in swift automotive & commercial container releases. Experience high-fidelity transparent customs clearing under Eslam Mohamed management."}
             </p>
@@ -144,7 +144,7 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
             </span>
             <span className="flex items-center gap-1.5 hover:text-white transition-colors">
               <Mail className="h-3.5 w-3.5 text-amber-400" />
-              <span>info@almuhammadiyah.com</span>
+              <span>eslamrezk80@gmail.com</span>
             </span>
             <span className="hidden md:flex items-center gap-1.5 hover:text-white transition-colors">
               <span className="h-1.5 w-1.5 bg-emerald-400 rounded-full" />
@@ -171,16 +171,15 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
         </div>
 
         {/* Right Side: High Fidelity Video Player & Interactive Visual Mockup */}
-        <div 
-          className={`flex-1 min-h-[350px] md:min-h-[420px] relative p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 ${
-            dragActive ? "bg-emerald-900/30 border-2 border-dashed border-amber-400 m-2 rounded-2xl" : ""
-          }`}
+        <div
+          className={`flex-1 min-h-[350px] md:min-h-[420px] relative p-6 flex flex-col justify-between overflow-hidden transition-all duration-300 ${dragActive ? "bg-emerald-900/30 border-2 border-dashed border-amber-400 m-2 rounded-2xl" : ""
+            }`}
           onDragEnter={handleDrag}
           onDragOver={handleDrag}
           onDragLeave={handleDrag}
           onDrop={handleDrop}
         >
-          
+
           {videoSrc ? (
             /* ACTIVE VIDEO RENDERING */
             <div className="absolute inset-x-0 inset-y-0 w-full h-full p-4 rounded-3xl z-0">
@@ -255,7 +254,7 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
           ) : (
             /* MOTION POSTER (SIMULATES USER'S INTRO VIDEO EXTREMELY HIGH FIDELITY) */
             <div className="absolute inset-0 w-full h-full z-0 flex flex-col justify-between p-6 overflow-hidden bg-gradient-to-b from-[#1c3028] via-[#0b1713] to-[#040907]">
-              
+
               {/* Airplane Animation Layer */}
               <div className="absolute top-10 left-10 md:left-24 animate-[bounce_8s_infinite_ease-in-out] opacity-35 pointer-events-none z-0">
                 <div className="transform rotate-12 flex items-center gap-2">
@@ -281,16 +280,16 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
 
               {/* Simulated Promo Screen Title Card elements */}
               <div className="relative z-10 w-full h-full flex flex-col justify-between">
-                
+
                 {/* Simulated Screen Header */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 bg-emerald-950/80 backdrop-blur-xs border border-emerald-800/40 px-3 py-1 rounded-full">
                     <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full animate-ping" />
                     <span className="text-[10px] font-bold text-emerald-300 tracking-wider">LIVE SYSTEM STREAM</span>
                   </div>
-                  
+
                   {/* Floating Action Button to let them upload their real video file immediately */}
-                  <button 
+                  <button
                     onClick={triggerSelectFile}
                     className="flex items-center gap-1.5 bg-amber-400 hover:bg-amber-300 text-emerald-950 font-bold text-xs px-3.5 py-1.5 rounded-lg transition-all shadow-md cursor-pointer"
                   >
@@ -301,7 +300,7 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
 
                 {/* Beautiful Mockups representing trucks, planes, and containers */}
                 <div className="my-auto text-center space-y-4 max-w-sm mx-auto">
-                  
+
                   <div className="h-14 w-14 mx-auto bg-gradient-to-br from-amber-400 to-emerald-600 rounded-2xl flex items-center justify-center text-white shadow-lg border border-white/10 animate-[pulse_3s_infinite_ease-in-out]">
                     <Film className="h-7 w-7 text-emerald-950" />
                   </div>
@@ -311,15 +310,15 @@ export default function PromoHeroVideo({ lang, activeTab, setActiveTab }: Props)
                       {isAr ? "واجهة الفيديو الدعائي الذكية" : "Smart Video Dashboard Face"}
                     </h4>
                     <p className="text-[11px] text-emerald-200/80 leading-normal font-sans">
-                      {isAr 
-                        ? "اسحب وأفلت فيديو الدعاية الجمركي المرفق (المحمدية للتخليص) هنا فورا للتشغيل المباشر دائم الخلفية في الصفحة الرئيسية." 
+                      {isAr
+                        ? "اسحب وأفلت فيديو الدعاية الجمركي المرفق (المحمدية للتخليص) هنا فورا للتشغيل المباشر دائم الخلفية في الصفحة الرئيسية."
                         : "Drag and drop the promo video attachment here to mount it as the interactive alive motion face of the app."}
                     </p>
                   </div>
 
                   {/* Browse Clickable Zone */}
                   <div className="inline-block">
-                    <span 
+                    <span
                       onClick={triggerSelectFile}
                       className="text-[10px] uppercase font-bold tracking-wider text-amber-200 border-b border-amber-300/40 hover:text-white hover:border-white transition-all cursor-pointer"
                     >

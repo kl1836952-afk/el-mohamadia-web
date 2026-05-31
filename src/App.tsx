@@ -119,8 +119,8 @@ function AppContent() {
       icon: <Mail className="h-5 w-5 text-emerald-600" />,
       labelAr: "البريد الإلكتروني",
       labelEn: "Email Inquiry Desk",
-      value: "info@almuhammadiyah.com",
-      href: "mailto:info@almuhammadiyah.com"
+      value: "eslamrezk80@gmail.com",
+      href: "mailto:eslamrezk80@gmail.com"
     }
   ];
 
@@ -529,7 +529,7 @@ function AppContent() {
 
           <div className="flex flex-col items-center md:items-end gap-1 font-mono text-[11px] text-emerald-300">
             <p>Phone: 01274833844</p>
-            <p>Email: info@almuhammadiyah.com</p>
+            <p>Email: eslamrezk80@gmail.com</p>
             <p className="mt-1 text-[10px] text-emerald-450">
               © {new Date().getFullYear()} {isAr ? "جميع الحقوق محفوظة." : "All rights reserved."}
             </p>
