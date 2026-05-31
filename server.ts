@@ -129,9 +129,12 @@ async function startServer() {
     console.log("Serving static production assets from dist/ folder.");
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Al-Muhammadiyah Customs fullstack app listening on http://localhost:${PORT}`);
-  });
+  // app.listen(PORT, "0.0.0.0", () => {
+  //   console.log(`Al-Muhammadiyah Customs fullstack app listening on http://localhost:${PORT}`);
+  // });
+
 }
 
 startServer();
+
+export default app;
